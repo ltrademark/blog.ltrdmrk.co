@@ -1,0 +1,29 @@
+{% macro gallery (images, active) %}
+  <div class="gallery">
+      <ul class="gallery-wrap">
+        {% for image in images -%}
+          <li class="item">
+              <div class="image-block">
+                <img src="{{ image }}" draggable="false"/>
+              </div>
+          </li>
+        {%- endfor %}
+      </ul>
+  </div>
+{% endmacro %}
+
+{%- macro video(src) -%}
+  <div class="embed  {% if 'mp4' in src %} embed-video {% else %} embed-iframe {% endif %}">
+    {% if 'mp4' in src -%}
+      <video controls playsinline src="{{ src }}"></video>
+    {% else -%}
+      <iframe src="{{ src }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {%- endif %}
+  </div>
+{%- endmacro -%}
+
+{%- macro spotify(src, type) -%}
+  <div class="embed embed-spotify {% if type -%} embed-type-{{ type }} {%- else -%} embed-type-{{ src | lookBtwn('.com/','/') }} {%- endif %}">
+    <iframe src="{% if 'open.spotify.com' in src -%} {{ src | spotifyShare2Embed }}?utm_source=generator {%- else -%} https://open.spotify.com/embed/{{type}}/{{src}}?utm_source=generator {%- endif %}" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  </div>
+{%- endmacro -%}

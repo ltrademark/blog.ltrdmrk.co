@@ -1,0 +1,133 @@
+@import './core';
+
+:root {
+  --space: 1rem;
+  --space-md: calc(var(--space) * 2);
+  --gap: var(--space-md);
+  --content-width: 70ch;
+  --image-offset: var(--gap);
+  --border-radius: #{$global-radius};
+  --foreground: #{$black};
+  --background: #{$white};
+
+  margin-block: 70px;
+  font-family: $font-stack;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+@media (prefers-color-scheme: dark) {
+ :root {
+   --foreground: #{$white};
+   --background: #{$black};
+ }
+}
+html, body {
+  color: var(--foreground);
+  background-color: var(--background);
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    inline-size: 0 !important;
+    display: none;
+  }
+}
+
+::selection {
+  color: $primary-color;
+  background-color: rgba($primary-color, 0.1);
+}
+
+main {
+  position: relative;
+  padding: var(--gap) 0;
+  &:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    animation: fadeOut $far $curve forwards $far;
+    pointer-events: none;
+    z-index: 6;
+  }
+    &:after {
+      @media (prefers-color-scheme: dark) {
+        --frames: 6;
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url('https://cdn.glitch.me/817f172c-df4f-420d-921f-a131f1da2f60%2Fnoise%205.png?v=1633562706782');
+        background-size: 100px 100px;
+        background-position: 0 0;
+        background-repeat: repeat;
+        animation: sprite 900ms steps(var(--frames)) infinite;
+        mix-blend-mode: exclusion;
+        opacity: .15;
+        pointer-events: none;
+        z-index: 6;
+      } 
+    }
+}
+*,*:before,*:after {
+  box-sizing: border-box;
+}
+
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  pointer-events: none;
+}
+.ltm-icon {
+ display:inline-block;
+ vertical-align:-.15em;
+ color:currentColor;
+}
+svg {
+ display:block;
+ color:inherit;
+ height:1em;
+ width:auto;
+ transition:335ms ease-in-out all;
+ .st0 {
+   fill:none;
+   stroke:currentColor;
+   stroke-width:2;
+   stroke-linecap:round;
+   stroke-linejoin:round
+     &.fl {
+     fill:currentColor;
+    }
+  }
+  .fl0 {
+   fill:currentColor;
+   stroke:none;
+   &.st {
+     stroke:currentColor;
+     stroke-width:2;
+     stroke-linecap:round;
+     stroke-linejoin:round;
+    }
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes sprite {
+  to {
+    background-position: calc((100px * var(--frames))/ -1);
+  }
+}

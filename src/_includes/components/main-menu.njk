@@ -1,0 +1,38 @@
+{% macro menuItem(url, label) %}
+  <li {% if url in page.url  %} class="current" {% endif %}>
+    <a href="{{url}}" title="{{label}}">{{label}}</a>
+  </li>
+{% endmacro %}
+{% set links = [
+        { label: 'Posts', url: '/posts/' },
+        { label: 'About', url: '/about/' },
+        { label: 'ltrdmrk↗', url: '//ltrdmrk.co/' }
+    ]
+%}
+<div class="lt-menu">
+  <div class="lt-container constrain constrain-medium">
+    <div class="lt-row">
+      <ul>
+        <li {% if not page.fileSlug %} class="current" {% endif %}>
+          <a href="/" title="Home">Home</a>
+        </li>
+        {%- for link in links -%}
+          {{ menuItem(link.url, link.label) }}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</div>
+{% block js %}
+<script>
+  console.clear();
+  const menuT = document.getElementsByClassName('menu-trigger')[0];
+  const menu = document.getElementsByClassName('lt-menu')[0];
+  menuT.addEventListener("click", (e) => {
+    let X = e.clientX ,
+        Y = e.clientY;
+    menu.style.setProperty("--clickX", e.clientX + "px");
+    menu.style.setProperty("--clickY", e.clientY + "px");
+  })
+</script>
+{% endblock %}

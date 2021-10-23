@@ -1,0 +1,19 @@
+// Basic Shades
+$white: #fafafa;
+$black: #121212;
+$dark-gray: lighten($black, 30%);
+$medium-gray: lighten($black, 70%);
+$light-gray: lighten($black, 90%);
+$red: #d62c15;;
+$yellow: #d6ac15; 
+$green: #19d615;
+
+// Info Colours
+$alert-color: $red;
+$warning-color: $yellow;
+$success-color: $green;
+
+// Overridable
+$primary-color: #15e !default;
+$secondary-color: orange !default;
+$trietary-color: #EA1 !default;

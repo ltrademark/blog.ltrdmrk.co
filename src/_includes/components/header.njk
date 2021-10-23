@@ -1,0 +1,31 @@
+<header class="lt-navigation">
+  <div class="lt-container constrain constrain-medium">
+    <div class="lt-navigation--col lt-col">
+      {% if page.url !== '/'%}
+      <a title="Back to Home" href="/" style="cursor: pointer; color: currentColor; outline: none; border: none">
+        <div class="ltm-icon">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 26 26" style="enable-background:new 0 0 26 26" xml:space="preserve"> <path class="st0" d="M16,7l-6,6l6,6"></path></svg>
+        </div>
+      </a>
+      {% endif %}
+    </div>
+    <div class="lt-navigation--col lt-col">
+      <a href="/" class="lt-nav-logo router-link-active" title="Blog Home" style="margin: auto;">
+        <div class="ltm-icon" style="display: flex; align-items: center; font-size: 40px;">
+          <svg xmlns="http://www.w3.org/2000/svg" class="primary-logo" viewBox="0 0 431.76 411.76"> <path class="fl0" d="M0,0V94.85H25V25H406.76V386.76H153.29v25H431.76V0ZM25,119.66H0v292.1H128.47v-25H25Z"></path> <polygon class="fl0" points="90.46 144.44 129.09 144.44 129.09 292.14 153.91 292.14 153.91 144.44 192.54 144.44 192.54 119.62 90.46 119.62 90.46 144.44"></polygon> <polygon class="fl0" points="316.49 119.62 316.49 119.64 316.33 119.62 278.4 219.29 240.47 119.62 240.25 119.65 240.25 119.62 215.43 119.62 215.43 292.14 240.25 292.14 240.25 186.86 278.4 292.14 316.49 187.03 316.49 292.14 341.3 292.14 341.3 119.62 316.49 119.62"></polygon> </svg>
+          <h2 style="margin: 0; margin-left: .5rem; font-size: 16px; text-transform: uppercase;">Blog</h2>
+        </div>
+      </a>
+    </div>
+    <div class="lt-navigation--col lt-col" style="justify-content: flex-end;">
+      <input id="menuTrigger" class="menu-input" type="checkbox" />
+      <label for="menuTrigger" class="menu-trigger">
+        <div class="ltm-icon menu-trigger" arial-label="menu">
+          <svg version="1.1" id="menuIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 26 26" style="enable-background:new 0 0 26 26" xml:space="preserve"> <title>menu</title><line class="st0" x1="7" y1="8" x2="19" y2="8"></line> <line class="st0" x1="7" y1="13" x2="19" y2="13"></line> <line class="st0" x1="7" y1="18" x2="19" y2="18"></line></svg>
+          <svg version="1.1" id="closeIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 26 26" style="enable-background:new 0 0 26 26;" xml:space="preserve"><title>close</title><line class="st0" x1="9" y1="9" x2="17" y2="17"/><line class="st1" x1="7" y1="13" x2="19" y2="13" opacity="0"/><line class="st0" x1="9" y1="17" x2="17" y2="9"/></svg>
+        </div>
+      </label>
+      {% include '../components/main-menu.njk' %}
+    </div>
+  </div>
+</header>

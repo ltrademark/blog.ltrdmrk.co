@@ -1,0 +1,28 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-home
+---
+
+<div class="wrapper home">
+  <div class="content">
+    {{ content | safe }}
+    <ul class="recent-posts">
+      {% set allposts = collections.posts | limit(5) %}
+      {%- for post in allposts -%}
+        <li{% if page.url == post.url %} aria-current="page"{% endif %} class="recent-posts--post">
+          <a href='{{ post.url }}' class="lt-btn lt-btn-default">
+            <div class="small-thumb" style="background-image: url('{{ post.data.image }}');'" style="width: 60px;"></div>
+            <div class="post-meta">
+              <h3>{{ post.data.title }}</h3>
+              {% if loop.index == 1 %}<p>{{ post.data.excerpt }}</p>{% endif %}
+              <i>{{ post.data.page.date | htmlDateString }}</i>
+            </div>
+          </a>  
+        </li>
+      {%- endfor -%}
+      {% if allposts.length > 5 %}<li style="grid-column: 1 / -1;"><a class="lt-btn lt-btn-primary" href="/posts" style="width: 100%;">View all posts</a></li>{% endif %}
+    </ul>
+  </div>
+</div>
+
+

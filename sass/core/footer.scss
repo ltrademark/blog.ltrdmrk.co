@@ -1,0 +1,20 @@
+footer {
+  &.lt-footer {
+    display: grid;
+    grid-template-columns: 1fr min(60ch, calc(100% - var(--gap) * 2)) 1fr;
+    column-gap: var(--gap);
+    margin-inline: auto;
+    .lt-col {
+      grid-column: 2;
+      padding: var(--gap);
+      text-align: center;
+      font-size: 10px;
+      p {
+        font-size: inherit;
+        + p {
+          margin-block-start: calc(var(--space)/3);
+        }
+      }
+    }
+  }
+}

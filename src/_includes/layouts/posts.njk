@@ -1,0 +1,25 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-home
+---
+
+{# This is the template for the Posts page–it lists the posts in the collection #}
+
+<div class="wrapper allposts">
+  <div class="content">
+    {{ content | safe }}
+    <ul class="recent-posts">
+      {%- for post in collections.posts -%}
+        <li{% if page.url == post.url %} aria-current="page"{% endif %} class="recent-posts--post">
+          <a href='{{ post.url }}' class="lt-btn lt-btn-default">
+            <div class="small-thumb" style="background-image: url('{{ post.data.image }}');'" style="width: 60px;"></div>
+            <div class="post-meta">
+              <h3>{{ post.data.title }}</h3>
+              <i>{{ post.data.page.date | htmlDateString }}</i>
+            </div>
+          </a>  
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>

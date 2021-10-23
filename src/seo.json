@@ -1,0 +1,14 @@
+{
+  "title":"LTRDMRK",
+  "description": "Stream of consciousness logged in a text-based format",
+  "url": "https://blog.ltrdmrk.co",
+  "image": "https://cdn.glitch.com/817f172c-df4f-420d-921f-a131f1da2f60%2Fshare_card%20%E2%80%93%20blog.jpg?v=1633120599343",
+  "author": "Leo Herrera",
+  "twitter": "Ltrademark",
+  "options": {
+    "titleDivider": "|",
+    "imageWithBaseUrl": false,
+    "twitterCardType": "summary_large_image",
+    "showPageNumbers": false
+  }
+}

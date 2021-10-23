@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://cdn.glitch.com/817f172c-df4f-420d-921f-a131f1da2f60%2Fltm-blue-icon.png?v=1633226090109" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="tream of consciousness logged in a text-based format" />
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css" />
+    {% seo "" %}
+  </head>
+  <body>
+    <main>
+      {% include '../components/header.njk' %}
+      {{ content | safe }}
+      {% include '../components/footer.njk' %}
+      <footer class="footer"></footer>
+    </main>
+  </body>
+</html>

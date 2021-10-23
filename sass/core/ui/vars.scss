@@ -1,0 +1,83 @@
+$rem-base: 16 !default;
+
+$global-radius: 5px !default;
+$global-margin: 1rem !default;
+$global-gutter: 1rem !default;
+$global-weight-normal: 400 !default;
+$global-lineheight: 1 !default;
+
+$fieldset-border:	1px solid $medium-gray !default;
+$fieldset-padding:	rem-calc(20) !default;
+$fieldset-margin:	rem-calc(18 0) !default;
+
+$legend-padding:	rem-calc(0 3) !default;
+
+$helptext-color:	$black !default;
+$helptext-font-size:	rem-calc(13) !default;
+$helptext-font-style:	italic !default;
+
+$input-prefix-color:	$black !default;
+$input-prefix-background:	$light-gray !default;
+$input-prefix-border:	1px solid $medium-gray !default;
+$input-prefix-padding:	1rem !default;
+
+$form-spacing:	rem-calc(16) !default;
+$form-label-color:	$black !default;
+$form-label-font-size:	rem-calc(14) !default;
+$form-label-font-weight:	800 !default;
+$form-label-line-height:	1.8 !default;
+$form-button-radius:	$global-radius !default;
+
+$input-color:	$black !default;
+$input-placeholder-color:	$medium-gray !default;
+$input-font-family:	inherit !default;
+$input-font-size:	rem-calc(16) !default;
+$input-font-weight:	$global-weight-normal !default;
+$input-line-height:	$global-lineheight !default;
+$input-background:	$white !default;
+$input-background-focus:	$white !default;
+$input-background-disabled:	$light-gray !default;
+$input-border:	1px solid $medium-gray !default;
+$input-border-focus:	1px solid $primary-color !default;
+$input-padding:	$form-spacing / 2 !default;
+$input-shadow:	inset 0 1px 2px rgba($black, 0.1) !default;
+$input-shadow-focus:	0 0 5px $medium-gray !default;
+$input-cursor-disabled:	not-allowed !default;
+$input-transition:	box-shadow 0.5s, border-color 0.25s ease-in-out !default;
+$input-number-spinners:	true !default;
+$input-radius:	$global-radius !default;
+
+$select-background:	$white !default;
+$select-triangle-color:	$dark-gray !default;
+$select-radius:	$global-radius !default;
+
+$meter-height:	1rem !default;
+$meter-radius:	$global-radius !default;
+$meter-background:	$medium-gray !default;
+$meter-fill-good:	$success-color !default;
+$meter-fill-medium:	$warning-color !default;
+$meter-fill-bad:	$alert-color !default;
+
+$progress-height:	1rem !default;
+$progress-background:	$medium-gray !default;
+$progress-margin-bottom:	$global-margin !default;
+$progress-meter-background:	$primary-color !default;
+$progress-radius:	$global-radius !default;
+
+$slider-height:	0.5rem !default;
+$slider-background:	$light-gray !default;
+$slider-fill-background:	$medium-gray !default;
+$slider-handle-height:	1.4rem !default;
+$slider-handle-width:	1.4rem !default;
+$slider-handle-background:	$primary-color !default;
+$slider-opacity-disabled:	0.25 !default;
+$slider-radius:	$global-radius !default;
+
+$near: 225ms;
+$far: 375ms;
+$distant: 665ms;
+$bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$curve: cubic-bezier(0.4, 0, 0.2, 1);
+$ease-in: cubic-bezier(0.4, 0, 1, 1);
+$ease-out: cubic-bezier(0, 0, 0.2, 1);
+$snap: cubic-bezier(0.785, 0.135, 0.15, 0.86);

@@ -1,0 +1,164 @@
+$menuText: $white;
+
+/* header / navigation */
+.lt-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr min(var(--content-width), calc(100% - var(--gap) * 2)) 1fr;
+  column-gap: var(--gap);
+  background-color: var(--background);
+  z-index: 5;
+  > .lt-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: .5rem 0rem;
+    grid-column: 2;
+  }
+  &--col {
+    display: flex;
+    align-items: center;
+    font-size: 1.7rem;
+    a {
+      color: inherit;
+      text-decoration: none;
+      border: none;
+    }
+    .menu-trigger {
+      cursor: pointer;
+      position: relative;
+      z-index: 100;
+      #closeIcon {
+        display: none;
+      }
+    }
+    .menu-input {
+      display: none;
+      &:checked {
+        ~ .lt-menu {
+/*           display: block; */
+          visibility: visible;
+          opacity: 1;
+          animation-name: bubbleIn;
+          .lt-row {
+            opacity: 1;
+          }
+        }
+        + .menu-trigger {
+          #menuIcon {
+            display: none;
+          }
+          #closeIcon {
+            display: block;
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.lt-menu {
+  --clickX: 50%;
+  --clickY: 50%;
+  
+  @media screen and (max-width: 768px) {
+    --clickX: 100%;
+  }
+  
+/*   display: none; */
+  visibility: hidden;
+  opacity: 0;
+  visibility: visible;
+  opacity: 1;
+  
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: $white;
+  background-color: $primary-color;
+  will-change: clip-path;
+  clip-path: circle(0% at var(--clickX) var(--clickY));
+  animation-name: bubbleOut;
+  animation-duration: $far;
+  animation-timing-function: $curve;
+  animation-direction: normal;
+  animation-fill-mode: forwards;
+  
+  .lt-container {
+    width: 100%;
+    height: 100%;
+    .lt-row {
+      opacity: 0;
+      display: grid;
+      grid-template-columns: 1fr min(35ch, calc(100% - var(--gap) * 2)) 1fr;
+      column-gap: var(--gap);
+      width: 100%;
+      height: 100%;
+      transition: $near $curve all $far;
+      ul {
+        margin-block: 3rem;
+        grid-column: 2;
+        width: 100%;
+        margin: 0;
+        padding: var(--gap) 0;
+        list-style-type: none;
+        li {
+          line-height: 1;
+          text-align: right;
+          font-size: clamp(5rem, 20vw, 8rem);
+          margin-block-end: 0;
+          
+          &.current {
+            color: $menuText;
+            a {
+              pointer-events: none;
+              -webkit-text-fill-color: $menuText;
+              -webkit-text-stroke: unset;
+            }
+          }
+          a {
+            display: inline-block;
+            color: inherit;
+            border: none;
+            font-family: "InterFace", sans-serif;
+            font-weight: 900;
+            line-height: 1;
+            -webkit-text-fill-color: $primary-color;
+            -webkit-text-stroke: 1px $menuText;
+            transition: $near $curve all;
+            transform-origin: top right;
+            transform: translateX(0px);
+            outline: none !important;
+            border: none !important;
+            &:hover {
+              transform: translateX(-10px);
+              -webkit-text-fill-color: rgba($menuText, .1);
+           }
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes bubbleIn {
+  from {
+    clip-path: circle(0% at var(--clickX) var(--clickY));
+  }
+  to {
+    clip-path: circle(100% at var(--clickX) var(--clickY));
+  }
+}
+@keyframes bubbleOut {
+  from {
+    clip-path: circle(100% at var(--clickX) var(--clickY));
+  }
+  to {
+    clip-path: circle(0% at var(--clickX) var(--clickY));
+  }
+}

@@ -1,0 +1,33 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-home
+---
+
+<div class="wrapper post">
+  <div class="content">
+    <div class="post-image">
+      {% if image %}
+        <img src="{{image}}" />
+      {% else %}
+        <img src="https://source.unsplash.com/random/1920x1080" />
+      {% endif %}
+    </div>
+    <h1 class="post-headline">{{title}}</h1>
+    {{ content | safe }}
+    <p class="content-footer">
+      <i>Posted on Earth date {{date | htmlDateString}}</i>
+    </p>
+    <div class="controls">
+    {% if prevPost.url %}
+      <div class="controls-prev">
+        <a class="lt-btn lt-btn-default previous" href="{{ prevPost.url }}">⬅️ {{ prevPost.data.title }}</a>
+      </div>
+    {% endif %}
+    {% if nextPost.url %}
+      <div class="controls-next">
+        <a class="lt-btn lt-btn-default next" href="{{ nextPost.url }}">{{ nextPost.data.title }} ➡️</a>
+      </div>
+    {% endif %}
+    </div>
+  </div>
+</div>
