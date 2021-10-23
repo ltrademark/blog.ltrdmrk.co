@@ -54,4 +54,4 @@ fields:
   default: layouts/post.njk
   hidden: true
 pages:
-- src/posts/this-is-an-example-post.app
+- src/posts/ok-that-last-one-messed-up.md
