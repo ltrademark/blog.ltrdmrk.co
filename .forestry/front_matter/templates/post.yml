@@ -1,4 +1,42 @@
 ---
 label: Post
 hide_body: false
-fields: []
+fields:
+- name: title
+  type: text
+  config:
+    required: false
+  label: Title
+- name: excerpt
+  type: text
+  config:
+    required: false
+  label: Description
+- name: date
+  type: datetime
+  label: Posted on
+  description: ''
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
+- name: image
+  type: file
+  config:
+    maxSize: 64
+  label: Cover
+- name: markdowntemplateengine
+  type: text
+  config:
+    required: false
+  hidden: true
+  label: markdownTemplateEngine
+  default: '"njk"'
+- name: layout
+  type: text
+  config:
+    required: false
+  label: layout
+  default: layouts/post.njk
+  hidden: true
