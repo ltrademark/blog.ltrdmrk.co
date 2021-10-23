@@ -53,3 +53,5 @@ fields:
   label: layout
   default: layouts/post.njk
   hidden: true
+pages:
+- src/posts/this-is-an-example-post.app
