@@ -19,10 +19,10 @@ build:
   preview_env:
   - watch:sass=npx sass sass:public/css --watch
   - watch:eleventy=eleventy --serve
-  - start=npm run watch:eleventy & npm run watch:sass
+  - forestry:preview=npm run watch:eleventy & npm run watch:sass
   preview_output_directory: public
   install_dependencies_command: npm install
   preview_docker_image: forestryio/node:12
   mount_path: "/srv"
   working_dir: "/srv"
-  instant_preview_command: npm run watch:eleventy & npm run watch:sass
+  instant_preview_command: npm run forestry:preview
