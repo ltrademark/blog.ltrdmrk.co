@@ -7,9 +7,9 @@ sections:
 - type: directory
   path: src/posts
   label: Posts
-  create: all
+  create: documents
   match: "*.md"
-  new_doc_ext: md
+  new_doc_ext: ''
 upload_dir: public/uploads
 public_path: public/uploads
 front_matter_path: ''
