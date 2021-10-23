@@ -6,27 +6,39 @@ fields:
 - name: title
   type: text
   config:
-    required: false
+    required: true
   label: Title
 - name: excerpt
   type: text
   config:
-    required: false
+    required: true
   label: Description
 - name: date
   type: datetime
   label: Posted on
   description: ''
   config:
-    required: false
+    required: true
     date_format: 
     time_format: 
     display_utc: false
+    export_format: YYYY-MM-DD
+  default: now
 - name: image
   type: file
   config:
     maxSize: 64
   label: Cover
+- name: include_image_gallery_1
+  type: boolean
+  label: Include Image Gallery 1
+- name: images01
+  type: image_gallery
+  config: {}
+  label: Images set 1
+  showOnly:
+    field: include_image_gallery_1
+    value: true
 - name: markdowntemplateengine
   type: text
   config:
